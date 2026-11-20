@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+  <title>Photos — Eric Waller, Jacksboro TX</title>
+  <style>
+    :root {
+      --bg: #f4f1ec;
+      --ink: #1c1917;
+      --muted: #57534e;
+      --line: #e7e0d6;
+      --card: #fffcf8;
+      --accent: #1c1917;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      padding: 2.2rem 1.25rem 1.4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+      background: var(--card);
+    }
+    header h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(1.35rem, 3.2vw, 1.9rem);
+      margin: 0 0 .35rem;
+      letter-spacing: .01em;
+    }
+    header .phone a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+    header .phone a:hover { text-decoration: underline; }
+    .toolbar {
+      margin-top: 1rem;
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      border: 1px solid var(--ink);
+      color: var(--card);
+      background: var(--ink);
+      padding: .5rem 1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: .92rem;
+    }
+    .btn:hover { opacity: .86; }
+    nav {
+      text-align: center;
+      padding: .9rem 1rem 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    nav a { color: var(--ink); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: .5rem 1rem 3rem;
+    }
+    .item {
+      margin-top: 2.4rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--line);
+    }
+    .item:first-child { border-top: 0; }
+    .item h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(1.25rem, 2.6vw, 1.65rem);
+      margin: 0 0 .8rem;
+    }
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: .45rem 1.25rem;
+      margin: 0 0 1.15rem;
+    }
+    .spec { margin: 0; }
+    .spec dt {
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .spec dd { margin: 0; font-size: .98rem; }
+    .spec.note { grid-column: 1 / -1; }
+    .spec.note dd { color: var(--ink); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: .55rem;
+    }
+    @media (min-width: 640px) {
+      .gallery { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .7rem; }
+    }
+    .tile {
+      display: block;
+      background: #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+    .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    footer a { color: var(--ink); text-decoration: none; }
+    /* Lightbox */
+    #lb {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(12,10,9,.94);
+      z-index: 50;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    #lb.open { display: flex; }
+    #lb img {
+      max-width: 100%;
+      max-height: 92vh;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+    #lb .x, #lb .navbtn {
+      position: absolute;
+      color: #fff;
+      background: transparent;
+      border: 0;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: .4rem .7rem;
+    }
+    #lb .x { top: .4rem; right: .5rem; font-size: 2.2rem; }
+    #lb .prev { left: .2rem; top: 50%; transform: translateY(-50%); }
+    #lb .next { right: .2rem; top: 50%; transform: translateY(-50%); }
+    @media (max-width: 600px) {
+      #lb .prev, #lb .next { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Eric Waller</h1>
+    <div class="phone"><a href="tel:9032434108">Eric Waller, Jacksboro TX, 903-243-4108</a></div>
+    <div class="toolbar"><a class="btn" href="all-photos.zip">Download all photos</a></div>
+  </header>
+  <nav><a href="#indian">1939 Indian Scout</a> · <a href="#road-glide">2018 Harley-Davidson Road Glide Ultra</a> · <a href="#softail">2007 Harley-Davidson Softail Custom</a> · <a href="#blue-wave">2018 Blue Wave 2300 Purebay</a></nav>
+  <main>
+    
+<section class="item" id="indian">
+  <div class="item-head">
+    <h2>1939 Indian Scout</h2>
+    <dl class="specs">
+      <div class="spec"><dt>Year</dt><dd>1939</dd></div><div class="spec"><dt>Make</dt><dd>Indian</dd></div><div class="spec"><dt>Model</dt><dd>Scout</dd></div><div class="spec"><dt>Color</dt><dd>Red</dd></div><div class="spec"><dt>Serial</dt><dd>FGP1366</dd></div>
+    </dl>
+  </div>
+  
+</section>
+
+
+<section class="item" id="road-glide">
+  <div class="item-head">
+    <h2>2018 Harley-Davidson Road Glide Ultra</h2>
+    <dl class="specs">
+      <div class="spec"><dt>Year</dt><dd>2018</dd></div><div class="spec"><dt>Make</dt><dd>Harley-Davidson</dd></div><div class="spec"><dt>Model</dt><dd>Road Glide Ultra (FLTRU)</dd></div><div class="spec"><dt>VIN</dt><dd>1HD1KGD16JB623430</dd></div><div class="spec"><dt>Miles</dt><dd>About 1,000 miles</dd></div>
+    </dl>
+  </div>
+  <div class="gallery" data-item="road-glide">
+<a class="tile" href="photos/road-glide-01.jpg" data-full="photos/road-glide-01.jpg" data-index="0"><img src="thumbs/road-glide-01.jpg" alt="2018 Harley-Davidson Road Glide Ultra photo 1" loading="lazy"></a>
+<a class="tile" href="photos/road-glide-02.jpg" data-full="photos/road-glide-02.jpg" data-index="1"><img src="thumbs/road-glide-02.jpg" alt="2018 Harley-Davidson Road Glide Ultra photo 2" loading="lazy"></a>
+<a class="tile" href="photos/road-glide-03.jpg" data-full="photos/road-glide-03.jpg" data-index="2"><img src="thumbs/road-glide-03.jpg" alt="2018 Harley-Davidson Road Glide Ultra photo 3" loading="lazy"></a>
+<a class="tile" href="photos/road-glide-04.jpg" data-full="photos/road-glide-04.jpg" data-index="3"><img src="thumbs/road-glide-04.jpg" alt="2018 Harley-Davidson Road Glide Ultra photo 4" loading="lazy"></a>
+<a class="tile" href="photos/road-glide-05.jpg" data-full="photos/road-glide-05.jpg" data-index="4"><img src="thumbs/road-glide-05.jpg" alt="2018 Harley-Davidson Road Glide Ultra photo 5" loading="lazy"></a>
+</div>
+</section>
+
+
+<section class="item" id="softail">
+  <div class="item-head">
+    <h2>2007 Harley-Davidson Softail Custom</h2>
+    <dl class="specs">
+      <div class="spec"><dt>Year</dt><dd>2007</dd></div><div class="spec"><dt>Make</dt><dd>Harley-Davidson</dd></div><div class="spec"><dt>Model</dt><dd>Softail Custom (FXSTC)</dd></div><div class="spec"><dt>VIN</dt><dd>1HD1JL5167Y037343</dd></div><div class="spec"><dt>Miles</dt><dd>28,793 miles</dd></div>
+    </dl>
+  </div>
+  <div class="gallery" data-item="softail">
+<a class="tile" href="photos/softail-01.jpg" data-full="photos/softail-01.jpg" data-index="0"><img src="thumbs/softail-01.jpg" alt="2007 Harley-Davidson Softail Custom photo 1" loading="lazy"></a>
+<a class="tile" href="photos/softail-02.jpg" data-full="photos/softail-02.jpg" data-index="1"><img src="thumbs/softail-02.jpg" alt="2007 Harley-Davidson Softail Custom photo 2" loading="lazy"></a>
+<a class="tile" href="photos/softail-03.jpg" data-full="photos/softail-03.jpg" data-index="2"><img src="thumbs/softail-03.jpg" alt="2007 Harley-Davidson Softail Custom photo 3" loading="lazy"></a>
+</div>
+</section>
+
+
+<section class="item" id="blue-wave">
+  <div class="item-head">
+    <h2>2018 Blue Wave 2300 Purebay</h2>
+    <dl class="specs">
+      <div class="spec"><dt>Year</dt><dd>2018</dd></div><div class="spec"><dt>Make</dt><dd>Blue Wave</dd></div><div class="spec"><dt>Model</dt><dd>2300 Purebay</dd></div><div class="spec"><dt>Color</dt><dd>Green</dd></div><div class="spec"><dt>HIN</dt><dd>PWV15221D818</dd></div><div class="spec note"><dd>Suzuki 250 hp four-stroke outboard, serial 25003F810550</dd></div><div class="spec note"><dd>Minn Kota Ulterra trolling motor</dd></div><div class="spec note"><dd>Humminbird Helix 10</dd></div><div class="spec note"><dd>T-top</dd></div><div class="spec note"><dd>2018 EZ-Loader trailer, VIN 1L8DAERH0JA034518</dd></div>
+    </dl>
+  </div>
+  
+</section>
+
+  </main>
+  <footer>
+    <a href="tel:9032434108">Eric Waller, Jacksboro TX, 903-243-4108</a>
+  </footer>
+  <div id="lb" hidden>
+    <button class="x" type="button" aria-label="Close">&times;</button>
+    <button class="navbtn prev" type="button" aria-label="Previous">&#10094;</button>
+    <img alt="">
+    <button class="navbtn next" type="button" aria-label="Next">&#10095;</button>
+  </div>
+  <script>
+    (function () {
+      const lb = document.getElementById("lb");
+      const img = lb.querySelector("img");
+      const tiles = Array.from(document.querySelectorAll(".tile"));
+      const urls = tiles.map(t => t.getAttribute("data-full"));
+      let i = 0;
+      function openAt(n) {
+        if (!urls.length) return;
+        i = (n + urls.length) % urls.length;
+        img.src = urls[i];
+        lb.hidden = false;
+        lb.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function close() {
+        lb.classList.remove("open");
+        lb.hidden = true;
+        img.removeAttribute("src");
+        document.body.style.overflow = "";
+      }
+      tiles.forEach((t, n) => {
+        t.addEventListener("click", (e) => {
+          e.preventDefault();
+          openAt(n);
+        });
+      });
+      lb.querySelector(".x").addEventListener("click", close);
+      lb.querySelector(".prev").addEventListener("click", () => openAt(i - 1));
+      lb.querySelector(".next").addEventListener("click", () => openAt(i + 1));
+      lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+      document.addEventListener("keydown", (e) => {
+        if (!lb.classList.contains("open")) return;
+        if (e.key === "Escape") close();
+        if (e.key === "ArrowLeft") openAt(i - 1);
+        if (e.key === "ArrowRight") openAt(i + 1);
+      });
+    })();
+  </script>
+</body>
+</html>
